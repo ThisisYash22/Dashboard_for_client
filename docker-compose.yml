@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  angular-app:
+    build: .
+    image: makechangeshere-angular-app:latest
+    ports:
+      - "4200:4200"
+    networks:
+      #- app-network
+      - internal-network  
+    mem_limit: 1g
+    
+  datacollector:
+    build:
+      context: ./src/data-collector
+    image: data-collector_edge:0.0.2
+    restart: "no"
+    networks:
+      - internal-network
+    depends_on: 
+      - server
+      - influxdb
+    volumes:
+      - './publish/:/publish/'
+      - './cfg-data/:/cfg-data/'
+    ports:
+      - "8000:8000"
+    mem_limit: 100mb
+
+  #### Server ####
+  server:
+    build:
+      context: ./src/server
+    image: server_edge:0.0.1
+    restart: "no"
+    networks:
+      - internal-network
+    depends_on:
+      - influxdb
+    mem_limit: 100mb
+
+  #### InfluxDB ####
+  influxdb:
+    build:
+      context: ./src/influxdb
+    image: influxdb_edge:0.0.1
+    restart: "no"
+    networks:
+      - internal-network
+    volumes:
+      - data:/var/lib/influxdb
+    mem_limit: 250mb
+
+networks:
+  app-network:
+    driver: bridge
+  proxy-redirect:
+    external: true
+  internal-network:
+    name: internal-network
+
+volumes:
+  data:

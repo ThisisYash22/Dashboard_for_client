@@ -1,0 +1,95 @@
+/* Background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #009999, #004d4d);
+  z-index: -1;
+}
+
+/* Siemens Logo */
+.siemens-logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  z-index: 1; /* Ensure it's above the background but below any modals or overlays */
+}
+
+/* Content */
+.content {
+  position: relative;
+  width: 80%;
+  margin: 45px auto 0;
+  text-align: center;
+  color: #ffffff;
+  animation: fadeIn 1s ease forwards; /* Fade-in animation */
+  opacity: 0;
+}
+
+/* Heading */
+.heading {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 25px;
+}
+
+/* Chart Container */
+.chart-container {
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: slideIn 1s ease forwards; /* Slide-in animation */
+  transform: translateY(100%);
+  overflow-x: auto; 
+}
+
+/* Canvas */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Additional styling for professional look */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.content h1 {
+  color: #004d4d;
+}
+
+.chart-container {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+canvas {
+  background-color: rgba(255, 255, 255, 0.9);
+}
