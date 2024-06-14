@@ -8,11 +8,9 @@ const app = express();
 const server = require('http').createServer(app);
 const PORT = 8000;
 
-// const MQTT_IP = "mqtt://server:1883";
-const MQTT_IP = "tcp://ie-databus:1883";
-const MQTT_TOPIC = "ie/d/j/simatic/v1/s7c1/dp/r/PLC_1/default";
-const MQTT_USER = 'edge'
-const MQTT_PASSWORD = 'edge'
+const MQTT_IP = "tcp://server:1883"; //tcp:
+const MQTT_TOPIC = "test/topic";
+
 const INFLUXDB_IP = "influxdb";
 const INFLUXDB_DATABASE = "databus_values";
 
@@ -22,12 +20,14 @@ app.use(cors());
 
 const options = {
   clientId: "mqttjs_" + Math.random().toString(16).slice(2, 10),
-  protocolId: "MQTT",
-  'username': MQTT_USER,
-  'password': MQTT_PASSWORD
+  protocolId: "tcp",
+  //protocol:"tcp"
 };
 
 const client = mqtt.connect(MQTT_IP, options);
+
+console.dir(client, { depth: null });  // Prints the client object with full depth
+console.log("\n \n Options:", JSON.stringify(options, null, 2));  // Pretty prints the options object
 
 let isInfluxDBReady = false;
 
