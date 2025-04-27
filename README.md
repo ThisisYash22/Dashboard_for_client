@@ -8,7 +8,7 @@ The project involved collecting, storing, and visualizing data in real-time usin
 
 **1. Data Collection and Storage**
   - Developed a Data Collector using Node.js which subscribes to an internal MQTT broker (Databus).
-  - The collector fetches live data published from an S7-1500 PLC (via OPC UA) and writes it into an InfluxDB time-series database.
+  - The collector fetches live data published from an S7-1500 PLC (via Simatic-v1/s7c1) and writes it into an InfluxDB time-series database.
 
 **2. Realtime Data Visualization**
   - Built a dynamic Angular dashboard to visualize the real-time data trends with the help of chart.js.
