@@ -7,30 +7,31 @@ The project involved collecting, storing, and visualizing data in real-time usin
 **What I Built**
 
 **1. Data Collection and Storage**
-  - Developed a Data Collector using Node.js which subscribes to an internal MQTT broker (Databus).
+  - Developed a Data Collector using Node.js which subscribes to an internal MQTT broker.
   - The collector fetches live data published from an S7-1500 PLC (via Simatic-v1/s7c1) and writes it into an InfluxDB time-series database.
-
+    
+**3. Simulator Development (Dummy Server)**
+  - Since sometimes a physical PLC was not available for testing the application, I built a Node.js server that generates dummy values (mimicking real plant           sensor data).
+  - This Server Image publishes simulated data onto the MQTT broker, enabling full testing of the system without real hardware.
+    
 **2. Realtime Data Visualization**
   - Built a dynamic Angular dashboard to visualize the real-time data trends with the help of chart.js.
   - Integrated WebSocket communication using Node.js backend to push updated values from InfluxDB to the Angular frontend.
 
-**3. Containerization using Docker**
-  - Created three Docker images:
+**4. Containerization using Docker**
+  - Created four Docker images:
   - Angular Frontend (for visualization)
   - InfluxDB Database (for storing time-series data)
   - Data Collector Service (Node.js app subscribing to MQTT and writing to InfluxDB)
-  - Wrote a Docker Compose YAML file to automate the deployment of all three services together.
-
-**4. Simulator Development (Dummy Server)**
-  - Since sometimes a physical PLC was not available for testing, I built a Node.js server that generates dummy values (mimicking real plant sensor data).
-  - This Server Image publishes simulated data onto the MQTT broker, enabling full testing of the system without real hardware.
+  - Data Publisher (for publishing dummy data without physical need of plc for development use)
+  - Wrote a Docker Compose YAML file to automate the deployment of all four services together.
 
 
 **Technologies Used**
 Frontend: Angular 16
 Backend: Node.js
 Database: InfluxDB V1
-Protocol: MQTT (using internal Databus)
+Protocol: MQTT (Message Queuing Telemetry Transport) Protocol
 Containerization: Docker, Docker Compose
 Realtime Communication: WebSockets
 
