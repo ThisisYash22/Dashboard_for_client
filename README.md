@@ -37,9 +37,20 @@ The project involved collecting, storing, and visualizing data in real-time usin
 
 
 **Behind the scenes:**
+
+Application working: 
+
 <img width="1255" alt="Screenshot 2025-04-27 at 3 05 16 PM" src="https://github.com/user-attachments/assets/02dff124-01da-4404-94cb-ab0f4e5c7bbf" />
 
-<img width="1280" alt="Screenshot 2025-04-27 at 3 04 40 PM" src="https://github.com/user-attachments/assets/45bba7b6-96b9-4969-b2a3-b165f300ed71" />
+
+All Over Flow: 
+
+<img width="600" alt="Screenshot 2025-04-27 at 3 04 40 PM" src="https://github.com/user-attachments/assets/45bba7b6-96b9-4969-b2a3-b165f300ed71" />
+
+
+Build Docker Container and Images: 
+
+<img width="1280" alt="Screenshot 2025-04-27 at 4 00 52 PM" src="https://github.com/user-attachments/assets/b9433587-00c2-472a-a719-9694c765243f" />
 
 
 **Dashboard Visualization:**
