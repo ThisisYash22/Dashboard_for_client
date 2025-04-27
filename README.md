@@ -28,12 +28,12 @@ The project involved collecting, storing, and visualizing data in real-time usin
 
 
 **Technologies Used**
-Frontend: Angular 16
-Backend: Node.js
-Database: InfluxDB V1
-Protocol: MQTT (Message Queuing Telemetry Transport) Protocol
-Containerization: Docker, Docker Compose
-Realtime Communication: WebSockets
+  - Frontend: Angular 16
+  - Backend: Node.js
+  - Database: InfluxDB V1
+  - Protocol: MQTT (Message Queuing Telemetry Transport) Protocol
+  - Containerization: Docker, Docker Compose
+  - Realtime Communication: WebSockets
 
 
 **Behind the scenes:**
