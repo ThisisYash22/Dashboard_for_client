@@ -1,27 +1,46 @@
-# TestApp
+**Realtime Dashboard for Bottle Line Plant Monitoring**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+I developed a Realtime Dashboard Application to monitor a bottle filling process.
+The project involved collecting, storing, and visualizing data in real-time using modern technologies like Angular, Node.js, MQTT, and InfluxDB — all orchestrated with Docker.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**What I Built**
 
-## Code scaffolding
+**1. Data Collection and Storage**
+  - Developed a Data Collector using Node.js which subscribes to an internal MQTT broker (Databus).
+  - The collector fetches live data published from an S7-1500 PLC (via OPC UA) and writes it into an InfluxDB time-series database.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**2. Realtime Data Visualization**
+  - Built a dynamic Angular dashboard to visualize the real-time data trends with the help of chart.js.
+  - Integrated WebSocket communication using Node.js backend to push updated values from InfluxDB to the Angular frontend.
 
-## Build
+**3. Containerization using Docker**
+  - Created three Docker images:
+  - Angular Frontend (for visualization)
+  - InfluxDB Database (for storing time-series data)
+  - Data Collector Service (Node.js app subscribing to MQTT and writing to InfluxDB)
+  - Wrote a Docker Compose YAML file to automate the deployment of all three services together.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**4. Simulator Development (Dummy Server)**
+  - Since sometimes a physical PLC was not available for testing, I built a Node.js server that generates dummy values (mimicking real plant sensor data).
+  - This Server Image publishes simulated data onto the MQTT broker, enabling full testing of the system without real hardware.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Technologies Used**
+Frontend: Angular 16
+Backend: Node.js
+Database: InfluxDB V1
+Protocol: MQTT (using internal Databus)
+Containerization: Docker, Docker Compose
+Realtime Communication: WebSockets
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**Behind the scenes:**
+<img width="1280" alt="Screenshot 2025-04-27 at 3 05 16 PM" src="https://github.com/user-attachments/assets/3bf5c2f6-3cf9-402b-a653-9fa63619c151" />
 
-## Further help
+<img width="1280" alt="Screenshot 2025-04-27 at 3 04 40 PM" src="https://github.com/user-attachments/assets/45bba7b6-96b9-4969-b2a3-b165f300ed71" />
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+**Dashboard Visualization:**
+<img width="1280" alt="Screenshot 2025-04-27 at 3 06 12 PM" src="https://github.com/user-attachments/assets/5d929177-8ab3-48d7-bfa9-1c1f014b23de" />
+
