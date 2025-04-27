@@ -36,11 +36,11 @@ Realtime Communication: WebSockets
 
 
 **Behind the scenes:**
-<img width="1280" alt="Screenshot 2025-04-27 at 3 05 16 PM" src="https://github.com/user-attachments/assets/3bf5c2f6-3cf9-402b-a653-9fa63619c151" />
+<img width="1255" alt="Screenshot 2025-04-27 at 3 05 16 PM" src="https://github.com/user-attachments/assets/02dff124-01da-4404-94cb-ab0f4e5c7bbf" />
 
 <img width="1280" alt="Screenshot 2025-04-27 at 3 04 40 PM" src="https://github.com/user-attachments/assets/45bba7b6-96b9-4969-b2a3-b165f300ed71" />
 
 
 **Dashboard Visualization:**
-<img width="1280" alt="Screenshot 2025-04-27 at 3 06 12 PM" src="https://github.com/user-attachments/assets/5d929177-8ab3-48d7-bfa9-1c1f014b23de" />
+<img width="1219" alt="Screenshot 2025-04-27 at 3 06 12 PM" src="https://github.com/user-attachments/assets/df5d701e-0513-4ed9-86d7-7b6bd46d2f51" />
 
